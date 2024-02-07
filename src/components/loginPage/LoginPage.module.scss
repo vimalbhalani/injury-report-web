@@ -1,0 +1,400 @@
+@import 'styles/color.scss';
+
+.container {
+  max-width: 1440px;
+  padding: 25px 60px;
+  margin: auto;
+  display: flex;
+  width: 100%;
+  margin: auto;
+  @include break-point(laptop) {
+    padding: 25px 35px;
+  }
+  @include break-point(tablet) {
+    padding: 0;
+  }
+  .loginWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    .topDiv {
+      .incidentReport {
+        width: 100%;
+        height: 495px;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          background: $white;
+          box-shadow: 0 0 20px -10px #98a2b3;
+          border-radius:  8px 8px 0px 0px;
+        }
+        @include break-point(tablet) {
+          height: 390px;
+        }
+      }
+      @include break-point(mobile) {
+        display: none;
+      }
+    }
+    .loginPage {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      background-color: $white;
+      padding: 24px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border-radius: 0px 0px 8px 8px;
+      .reportText {
+        text-align: center;
+        font-size: 16px;
+        color: #2f2f2f;
+        padding: 5px 18px 18px 18px;
+        font-weight: 500;
+        background-color: $white;
+        .contactUs {
+          margin-bottom: 8px;
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+      @include break-point(mobile) {
+        border-top: 0px;
+        box-shadow: unset;
+        margin: 24px auto;
+      }
+      @include break-point(laptop) {
+        min-width: unset;
+      }
+      @include break-point(tablet) {
+        margin: 0;
+      }
+      .heading {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 36px;
+        color: black;
+      }
+      .closeIcon {
+        cursor: pointer;
+      }
+      .textField {
+        display: block;
+        > div > input {
+          padding: 11px 14px;
+          @include break-point(laptop) {
+            padding: 9px 14px;
+          }
+        }
+      }
+      .select {
+        > div {
+          > div {
+            min-height: unset;
+            padding: 11px 14px;
+            @include break-point(laptop) {
+              padding: 9px 14px;
+            }
+          }
+        }
+      }
+      .datePicker {
+        > div > div {
+          input {
+            padding: 11px 14px;
+            @include break-point(laptop) {
+              padding: 9px 14px;
+            }
+          }
+        }
+      }
+      .button {
+        background: $secondary-blue;
+        padding: 10px 30px;
+        border-radius: 25px;
+        display: block;
+        margin: auto;
+        width: 208px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// Verify Modal
+.modalRoot {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    .title {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    .closeIcon {
+      cursor: pointer;
+    }
+  }
+  .modalLogo {
+    display: block;
+    margin: auto;
+  }
+  .verifyButton {
+    padding: 8px 42px;
+    background: $secondary-blue;
+    padding: 10px 30px;
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    span {
+      height: 25px !important;
+    }
+  }
+  .disableResendBtn {
+    pointer-events: none;
+    opacity: 0.6;
+    visibility: hidden;
+    margin: 10px;
+  }
+  .timer {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    color: $secondary-blue;
+  }
+  .verifyOtpLabel {
+    margin-bottom: 8px;
+  }
+  .verifyInputWrapper {
+    padding-left: 26px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .fontBold {
+    font-weight: 600;
+    color: $secondary-blue;
+  }
+
+  .resentOtp {
+    color: $secondary-blue;
+    margin-top: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.errorMessage {
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin: 3px 14px 16px 14px;
+  color: #d32f2f;
+}
+
+// upload image
+.uploadMultiImageField {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+  cursor: pointer;
+  .inputWrapper {
+    position: relative;
+    margin-right: 10px;
+    border-radius: 13px;
+    width: 100%;
+    min-height: 130px;
+    height: 100%;
+    background-color: $white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+  }
+  .imageInput {
+    opacity: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    border-radius: 13px;
+    z-index: 999;
+    position: absolute;
+  }
+  .inputLabel {
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .photoCameraIcon {
+    fill: #777777;
+  }
+  .inputPlaceholder {
+    color: #777777;
+  }
+}
+.imageWrapper {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  @include break-point(mobile) {
+    justify-content: center;
+  }
+}
+
+.smallInputLabel {
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px dashed #777777;
+  width: 100px;
+  height: 120px;
+  border-radius: 12px;
+}
+
+.smallImageInput {
+  opacity: 0;
+  cursor: pointer;
+  height: 120px;
+  width: 100px;
+  z-index: 999;
+  position: absolute;
+}
+.documentItem {
+  position: relative;
+  border-radius: 4px;
+  img {
+    border-radius: 8px;
+  }
+
+  .deleteButton {
+    background-color: $white;
+    width: 24px;
+    opacity: 0.7;
+    border-radius: 5px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 12px;
+    right: 4px;
+    border: 0px;
+    > svg {
+      stroke: $dark-grey;
+    }
+  }
+}
+.containerBackground {
+  background-color: $white;
+  width: 100%;
+  max-width: 873px;
+  height: 512px;
+  margin: auto;
+  padding: 25px 60px;
+  display: flex;
+  width: 100%;
+  border-radius: 12px;
+  flex-direction: column;
+  justify-content: center;
+  img {
+    display: block;
+    margin: 0 auto;
+    margin-top: -65px;
+  }
+  p {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    span {
+      color: orange;
+      font-size: 18px;
+    }
+  }
+  @include break-point(mobile) {
+    width: 100%;
+    height: calc(100vh - 169px);
+    border-radius: 0px;
+    padding: 20px;
+  }
+}
+
+.uploadPdf {
+  width: 100px;
+  height: 120px;
+  background-color: $white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pdfImage {
+  text-align: center;
+}
+
+.pdfName {
+  text-align: center;
+  font-size: 14px;
+}
+
+.terms {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4px;
+}
+
+.checkTerm {
+  > span {
+    padding: 0px !important;
+    margin-right: 10px;
+  }
+}
+
+.termsContent {
+  .condition {
+    font-size: 14px;
+    color: $hyperlink;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}
+
+.error {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #d32f2f;
+}
+
+.msg {
+  font-size: 12px;
+}
+.radioButton{
+  display: flex;
+  flex-direction: column;
+  gap: 08px;
+  h6{
+    margin-bottom: 0px;
+  }
+}
+.appointment{
+  display: flex;
+  gap: 08px;
+}

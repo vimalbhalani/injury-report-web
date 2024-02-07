@@ -1,0 +1,11 @@
+@import 'styles/color.scss';
+
+.mainDiv {
+  width: 90%;
+  background-color: $white;
+  margin: 0px auto;
+  padding: 50px;
+  .title {
+    margin-bottom: 20px;
+  }
+}

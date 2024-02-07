@@ -1,0 +1,75 @@
+@import 'styles/color.scss';
+
+.header {
+  background-color: $primary-blue;
+  position: sticky;
+  top: 0;
+  color: $white;
+  padding: 0 24px;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 0 0 20px -10px #98a2b3;
+  @include break-point(mobile) {
+    padding: 16px 24px;
+    height: auto;
+  }
+  .contentWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include break-point(mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .headerContent {
+      font-size: 24px;
+      font-weight: 400;
+      text-align: center;
+      cursor: pointer;
+      @include break-point(mobile) {
+        font-size: 20px;
+      }
+    }
+    .highlightText {
+      font-size: 24px;
+      font-weight: 500;
+
+      color: orange;
+      @include break-point(mobile) {
+        font-size: 20px;
+      }
+    }
+    .crashText {
+      font-size: 24px;
+      font-weight: 500;
+      color: $white;
+      margin-left: -08px;
+
+      @include break-point(mobile) {
+        font-size: 20px;
+      }
+    }
+    .headerSubContent {
+      color: $white;
+      font-size: 14px;
+
+      @include break-point(mobile) {
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+}
+
+.image {
+  text-align: center;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,23 @@
+@import 'styles/color.scss';
+
+.footer {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $primary-blue;
+  color: $white;
+  @include break-point(mobile) {
+    padding: 16px 24px;
+    font-size: 14px;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+.policy {
+  > a {
+    color:$white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+}
