@@ -1,0 +1,27 @@
+@import 'styles/color.scss';
+
+.title {
+  margin: 30px 0px 15px 0px;
+}
+
+.descriptions {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.pregraph {
+  margin-bottom: 30px;
+}
+
+.list {
+  display: flex;
+  width: 95%;
+  margin: auto;
+}
+
+.mainDiv {
+  width: 85%;
+  margin: 0px auto;
+  background-color: $white;
+  padding: 30px;
+}

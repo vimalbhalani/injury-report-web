@@ -1,0 +1,26 @@
+@import 'styles/color.scss';
+
+.dateField {
+  caret-color: transparent;
+  label {
+    // font-weight: 500;
+    // font-size: 14px;
+    // line-height: 21px;
+    // margin-bottom: 7px;
+  }
+  > div {
+    input {
+      // text-transform: uppercase;
+      // font-weight: 400;
+      // font-size: 12px;
+      // line-height: 18px;
+      // text-overflow: ellipsis;
+      // color: $dark-grey;
+      // padding: 18px 13px;
+    }
+    fieldset {
+      border: 0.5px solid $light-grey;
+      box-shadow: none;
+    }
+  }
+}

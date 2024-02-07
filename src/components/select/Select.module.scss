@@ -1,0 +1,56 @@
+@import 'styles/color.scss';
+
+.container {
+  width: 100%;
+  .menuItem {
+    text-transform: capitalize;
+  }
+  fieldset {
+    border: 0.5px solid $light-grey;
+
+  }
+  .downArrow {
+    width: 12px;
+    height: 6px;
+    margin-right: 20px;
+    cursor: pointer;
+    path {
+      stroke: $dark-grey;
+    }
+  }
+}
+.placeholder{
+  color: #a4a4a4;
+}
+
+.rootMenu {
+  display: block;
+  .paperMenu {
+    border: 0.5px solid $light-grey;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+  }
+  li {
+    font-family: 'Poppins';
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 16px;
+    min-height: 32px;
+    color: $black;
+    text-transform: capitalize;
+  }
+  ul {
+    padding: 8px 0;
+    height: fit-content;
+    overflow: auto;
+    max-height: 210px;
+  }
+}
+
+.error {
+  font-size: 12px;
+  color: $warning;
+  margin-top: 2px;
+  margin-left: 0px !important;
+  line-height: 16px;
+}

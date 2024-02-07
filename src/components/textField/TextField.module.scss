@@ -1,0 +1,41 @@
+@import 'styles/color.scss';
+
+.label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 9px;
+  display: block;
+}
+
+.inputTextField {
+  input {
+    // font-weight: 500;
+    // font-size: 14px;
+    // line-height: 24px;
+    // color: $black;
+    // height: initial;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-internal-autofill-selected {
+    -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.15);
+    -webkit-text-fill-color: $black;
+    -webkit-border-image: none;
+    background-color: transparent !important;
+    -webkit-background-clip: text !important;
+  }
+  fieldset {
+    border: 1px solid $light-grey;
+    border-radius: 5px;
+    box-shadow: inset 0px 3px 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.eyeIcon {
+  fill: $light-grey;
+}
