@@ -3,6 +3,7 @@ export interface IFormValues {
   lastName: string
   phone: string
   email: string
+  appointment: string
   dateOfAccident: string
   transportation: string
   documents: IDocument[]
