@@ -27,9 +27,7 @@ const getHtmlTemplate = (templateData: Record<string, string | undefined | Buffe
     insurance,
     state,
     city,
-    appointmentDate,
-    appointmentTime,
-    documents,
+    appointment,
   } = templateData
   return `<html lang="en">
 <head>
@@ -38,7 +36,7 @@ const getHtmlTemplate = (templateData: Record<string, string | undefined | Buffe
     <title></title>
 </head>
 <body>
-    <p style=" margin: 0 0 30px 0; font-weight: 600; font-size: 24px; text-align:center;">Incident Reports</p>
+    <p style=" margin: 0 0 30px 0; font-weight: 600; font-size: 24px; text-align:center;">Injury Reports</p>
     <table style="border-collapse: collapse; text-align: left;">
         <tr style="border-bottom: 3px solid transparent;">
             <th>First Name:</th>
@@ -77,8 +75,8 @@ const getHtmlTemplate = (templateData: Record<string, string | undefined | Buffe
             <td>${insurance}</td>
         </tr>
         <tr style="border-bottom: 3px solid transparent;">
-        <th>Best time for appointment :</th>
-        <td>${appointmentDate} ${appointmentTime}</td>
+        <th>Best time for Doctor's appointment :</th>
+        <td>${appointment}</td>
       </tr>
         <tr style="border-bottom: 3px solid transparent;">
             <th>Zip code:</th>

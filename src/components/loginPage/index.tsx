@@ -53,6 +53,7 @@ const Login = () => {
 
   const injuryOptions = ['Head', 'Neck', 'Back', 'Shoulder', 'Leg', 'Other']
   const painOption = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+  const appointmentOption = ['Morning', 'Afternoon', 'Evening ']
 
   const formik = useFormik({
     initialValues: {
@@ -68,8 +69,7 @@ const Login = () => {
       state: '',
       city: '',
       transportation: 'no',
-      appointmentDate: '',
-      appointmentTime: '',
+      appointment: '',
       documents: [],
       terms: false,
     },
@@ -85,7 +85,8 @@ const Login = () => {
   })
 
   const handleStateChange = (value: string) => {
-    setCityOptions(countryData[value as keyof typeof countryData])
+    const sortedCities = countryData[value as keyof typeof countryData].sort()
+    setCityOptions(sortedCities)
     formik.setFieldValue('state', value)
     formik.setFieldValue('city', '')
   }
@@ -165,8 +166,7 @@ const Login = () => {
           formData.set('painLevel', payload?.painLevel ?? '')
           formData.set('zipCode', payload?.zipCode.toString() ?? '')
           formData.set('insurance', payload?.insurance ?? '')
-          formData.set('appointmentDate', payload?.appointmentDate ?? '')
-          formData.set('appointmentTime', payload?.appointmentTime ?? '')
+          formData.set('appointment', payload?.appointment ?? '')
           formData.set('transportation', payload?.transportation ?? '')
           payload?.documents?.forEach((item: IDocument, index) => {
             const documentFile = item?.file as File
@@ -291,7 +291,7 @@ const Login = () => {
                   name="state"
                   value={formik.values.state}
                   onChange={handleStateChange}
-                  options={Object.keys(countryData)}
+                  options={Object.keys(countryData).sort()}
                   placeholder="Select State"
                   fullWidth
                   error={formik.touched.state && Boolean(formik.errors.state)}
@@ -413,11 +413,25 @@ const Login = () => {
                   className={styles.textField}
                 />
               </Grid>
-              <Grid item container xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Typography variant="subtitle1" gutterBottom>
-                  Best time for Appt
+                  Best time for Doctor's appointment
                 </Typography>
-                <Grid item xs={12}>
+                <Select
+                  value={formik.values.appointment}
+                  onChange={(value) => {
+                    formik.setFieldValue('appointment', value)
+                  }}
+                  options={appointmentOption}
+                  placeholder="Select Appointment"
+                  fullWidth
+                  name="appointment"
+                  error={!!formik.errors.appointment && formik.touched.appointment}
+                  helperText={formik.touched.appointment && formik.errors.appointment ? formik.errors.appointment : ''}
+                  className={styles.select}
+                />
+                {/* TODO */}
+                {/* <Grid item xs={12}>
                   <div className={styles.appointment}>
                     <Box>
                       <DatePicker
@@ -449,12 +463,12 @@ const Login = () => {
                       />
                     </Box>
                   </div>
-                </Grid>
+                </Grid> */}
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={12}>
                 <div className={styles.radioButton}>
                   <Typography variant="subtitle1" gutterBottom>
-                    Transportation
+                    Do you need the Doctor to provide free transportation to the first visit ?
                   </Typography>
                   <FormControl component="fieldset">
                     <RadioGroup row aria-label="transportation" {...formik.getFieldProps('transportation')}>
@@ -498,8 +512,9 @@ const Login = () => {
                     Terms of use*
                   </a>{' '}
                   By clicking submit, I consent to receive SMS messages and calls from EZINJURY to assist me in
-                  obtaining a police report. I am providing my consent to EZINJURY to have my information forwarded to a
-                  law firm, and I am requesting for a law firm to contact me at the number I have provided.
+                  obtaining a doctor's appointment. I am providing my consent to EZINJURY to have my information
+                  forwarded to a medical provider and to a law firm. I am requesting for a Doctor to contact me to
+                  schedule an appointment and I am requesting an Attorney to contact me for a consultation.
                 </p>
               </Grid>
               <Grid item xs={12}>

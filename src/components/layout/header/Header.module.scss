@@ -1,26 +1,27 @@
 @import 'styles/color.scss';
 
 .header {
-  background-color: $primary-blue;
+  background-color: $white;
   position: sticky;
   top: 0;
-  color: $white;
-  padding: 0 24px;
   width: 100%;
   z-index: 2;
   box-shadow: 0 0 20px -10px #98a2b3;
   @include break-point(mobile) {
-    padding: 16px 24px;
     height: auto;
   }
   .contentWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 70px;
+    padding: 0px 24px;
 
     @include break-point(mobile) {
       flex-direction: column;
       align-items: center;
+      height: auto;
+      margin-bottom: 12px;
     }
     .headerContent {
       font-size: 24px;
@@ -40,36 +41,46 @@
         font-size: 20px;
       }
     }
-    .crashText {
-      font-size: 24px;
-      font-weight: 500;
-      color: $white;
-      margin-left: -08px;
+    .title {
+      color: $primary-blue;
+      font-size: 26px;
+      font-style: italic;
+      font-weight: 700;
+      .crashText {
+        font-size: 24px;
+        font-weight: 500;
+        color: $primary-blue;
+        font-style: normal;
+        margin-left: 8px;
 
-      @include break-point(mobile) {
-        font-size: 20px;
+        @include break-point(mobile) {
+          font-size: 20px;
+        }
       }
     }
-    .headerSubContent {
-      color: $white;
-      font-size: 14px;
-
-      @include break-point(mobile) {
-        text-align: center;
-        font-weight: bold;
-      }
+    .image {
+      margin-top: 6px;
+      cursor: pointer;
+  
     }
   }
 }
-
+.announcement {
+  color: red;
+  text-align: center;
+  padding: 4px;
+  font-size: 16px;
+  background-color: #039BE5 ;
+}
 .img {
   width: 100px;
   height: 100px;
 }
-
-.image {
+.headerSubContent {
+  color: $black;
+  font-size: 14px;
   text-align: center;
-  margin-top: 6px;
-  display: flex;
-  align-items: center;
+  @include break-point(mobile) {
+    text-align: center;
+  }
 }

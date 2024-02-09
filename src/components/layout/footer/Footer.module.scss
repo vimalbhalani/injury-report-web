@@ -4,19 +4,21 @@
   padding: 24px;
   display: flex;
   justify-content: space-between;
-  background-color: $primary-blue;
-  color: $white;
+  background-color: $white;
+  color: $black;
+  box-shadow: 20px 0px 20px -10px #98a2b3;
   @include break-point(mobile) {
     padding: 16px 24px;
     font-size: 14px;
     text-align: center;
     flex-direction: column;
+    border-top: 2px solid $black;
   }
 }
 
 .policy {
   > a {
-    color:$white;
+    color:$black;
     text-decoration: none;
     font-size: 14px;
   }
