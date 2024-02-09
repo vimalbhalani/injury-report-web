@@ -1,0 +1,11 @@
+{
+    "cSpell.words": ["formik"],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll": "explicit",
+      "source.organizeImports": "never"
+    },
+    "editor.renderWhitespace": "none",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
+  }
