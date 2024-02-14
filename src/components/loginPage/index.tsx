@@ -186,7 +186,7 @@ const Login = () => {
             toast.error(emailResponse?.data?.error || 'Failed to send email', { autoClose: 3000 })
           }
         } catch (error) {
-          console.error('Error sending email:', error)
+          console.error('Error sending email: ', error)
         }
         setLoading(false)
       } else {
