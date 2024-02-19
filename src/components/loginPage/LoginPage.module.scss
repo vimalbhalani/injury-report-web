@@ -309,7 +309,7 @@
   background-color: $white;
   width: 100%;
   max-width: 873px;
-  height: 512px;
+  height: calc(100vh - 176px);
   margin: auto;
   padding: 25px 60px;
   display: flex;
@@ -325,10 +325,10 @@
   p {
     text-align: center;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 36px;
     span {
-      color: orange;
-      font-size: 18px;
+      color: $primary-blue;
+      font-size: 36px;
     }
   }
   @include break-point(mobile) {

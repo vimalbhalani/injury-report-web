@@ -49,7 +49,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false)
   const [timeRemaining, setTimeRemaining] = useState<number>(60)
   const [startTimer, setStartTimer] = useState<boolean>(true)
-  const [isVerify, setIsVerify] = useState(true)
+  const [isVerify, setIsVerify] = useState(false)
 
   const injuryOptions = ['Head', 'Neck', 'Back', 'Shoulder', 'Leg', 'Other']
   const painOption = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
@@ -180,8 +180,8 @@ const Login = () => {
           })
           if (!emailResponse.data.error && emailResponse.data.success) {
             toast.success(emailResponse.data.message, { autoClose: 3000 })
-            formik.resetForm()
             setIsVerify(true)
+            formik.resetForm()
           } else {
             toast.error(emailResponse?.data?.error || 'Failed to send email', { autoClose: 3000 })
           }
@@ -218,7 +218,7 @@ const Login = () => {
   }
   const label = { inputProps: { 'aria-label': 'terms' } }
 
-  return isVerify ? (
+  return !isVerify ? (
     <div className={styles.container}>
       {loading && <Loader />}
       <div className={styles.loginWrapper}>
@@ -590,10 +590,9 @@ const Login = () => {
     </div>
   ) : (
     <div className={styles.containerBackground}>
-      <Image src={Logo} alt="Logo" height={150} width={150} className={styles.modalLogo} />
+      {/* <Image src={Logo} alt="Logo" height={150} width={150} className={styles.modalLogo} /> */}
       <p>
-        <span className={styles.highlightText}>Thank you</span> for requesting a legal consultation, a law firm will be
-        contacting you shortly.
+        <span className={styles.highlightText}>Thank you</span> for your submission.
       </p>
     </div>
   )
